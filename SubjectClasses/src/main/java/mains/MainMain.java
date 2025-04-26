@@ -47,18 +47,19 @@ public class MainMain {
 	}
 		
 		public static void main(String[] args) {
-		System.out.println("Choose from the below options of DSA Topics \n 1. Two Pointers 2. Sliding Window 3. Prefix Sum & Difference Arrays \n "
-				+ "4. Kadane’s Algorithm (Max Subarray Sum) 5. LinkedList"
-				+ " 6. Stack & Queue");
-		int a = S1.nextInt();
+		int a=0;
 		while (a!=-1) {
+			System.out.println("\nChoose from the below options of DSA Topics (enter '-1' to exit \n 1. Two Pointers 2. Sliding Window 3. Prefix Sum & Difference Arrays \n "
+					+ "4. Kadane’s Algorithm (Max Subarray Sum) 5. LinkedList"
+					+ " 6. Stack & Queue");
+			a = S1.nextInt();
 			if (a==1) {TPM.main(args); a=0;}
 			else if (a==2) {SWM.main(args);a=0;}
 			else if (a==3) {PSDA.main(args);a=0;}
 			else if (a==4) {KAMSM.main(args);a=0;}
 			else if (a==5) {LLM.main(args);a=0;}
 			else if (a==6) {SQM.main(args);a=0;}
-			else {break;}
 			}
+		if(a==-1) System.out.println("\n\nApplication turned off!! Exit Successfull! See you again!");
 	}
 }
