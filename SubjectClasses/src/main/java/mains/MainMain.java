@@ -40,8 +40,16 @@ public class MainMain {
 		}
 	}
 		
+		public class SQM extends StackAndQueueMain {
+			public static void main(String[] args) {
+				StackAndQueueMain.main(args);
+		}
+	}
+		
 		public static void main(String[] args) {
-		System.out.println("Choose from the below options of DSA Topics \n 1. Two Pointers 2. Sliding Window 3. Prefix Sum & Difference Arrays 4. Kadane’s Algorithm (Max Subarray Sum) \n 5. LinkedList \n");
+		System.out.println("Choose from the below options of DSA Topics \n 1. Two Pointers 2. Sliding Window 3. Prefix Sum & Difference Arrays \n "
+				+ "4. Kadane’s Algorithm (Max Subarray Sum) 5. LinkedList"
+				+ " 6. Stack & Queue");
 		int a = S1.nextInt();
 		while (a!=-1) {
 			if (a==1) {TPM.main(args); a=0;}
@@ -49,6 +57,7 @@ public class MainMain {
 			else if (a==3) {PSDA.main(args);a=0;}
 			else if (a==4) {KAMSM.main(args);a=0;}
 			else if (a==5) {LLM.main(args);a=0;}
+			else if (a==6) {SQM.main(args);a=0;}
 			else {break;}
 			}
 	}

@@ -1,14 +1,26 @@
 package mains;
-
+import linkedListNeeds.PrintList;
 import java.util.Scanner;
 
+import linkedList.ArrayCycleDetection;
 import linkedList.BrowserHistory;
 import linkedList.CircularPlaylist;
 import linkedList.CircularQueue;
 import linkedList.CycleDetection;
 import linkedList.DoublyLinkedList;
+import linkedList.MergeKSortedLists;
+import linkedList.MergeSortedLists;
+import linkedList.MiddleOfList;
+import linkedList.PalindromeLinkedList;
+import linkedList.ReverseBetween;
+import linkedList.ReverseKGroup;
+import linkedList.ReverseLinkedListIterative;
+import linkedList.ReverseLinkedListRecursive;
 import linkedList.RoundRobinScheduler;
 import linkedList.SinglyLinkedList;
+import linkedList.SplitByValue;
+import linkedList.SplitList;
+import linkedList.StartOfCycle;
 import linkedListNeeds.Node;
 
 public class LinkedListMain {
@@ -106,10 +118,214 @@ public class LinkedListMain {
 	    }
 	}
 	
+	public class MOL extends MiddleOfList {
+		public static void main(String[] args) {
+	        Node head = new Node(10);
+	        head.setNext(new Node(20));
+	        head.getNext().setNext(new Node(30));
+	        head.getNext().getNext().setNext(new Node(40));
+	        head.getNext().getNext().getNext().setNext(new Node(50));
+
+	        System.out.println("Middle: " + findMiddle(head)); // 30
+	    }
+	}
+	
+	public class SOC extends StartOfCycle {
+		public static void main(String[] args) {
+	        Node head = new Node(1);
+	        head.setNext(new Node(2));
+	        head.getNext().setNext(new Node(3));
+	        head.getNext().getNext().setNext(new Node(4));
+	        head.getNext().getNext().getNext().setNext(new Node(5));
+
+	        // Creating a cycle: 5 → 3
+	        head.getNext().getNext().getNext().getNext().setNext(head.getNext().getNext());
+
+	        Node start = detectCycleStart(head);
+
+	        if (start != null) {
+	            System.out.println("Cycle starts at node: " + start.getData());
+	        } else {
+	            System.out.println("No cycle detected.");
+	        }
+	    }
+	}
+	
+	public class PLL extends PalindromeLinkedList {
+		public static void main(String[] args) {
+	        Node head = new Node(1);
+	        head.setNext(new Node(2));
+	        head.getNext().setNext(new Node(2));
+	        head.getNext().getNext().setNext(new Node(1));
+
+	        System.out.println("Is palindrome? " + isPalindrome(head)); // true
+	    }
+	}
+	
+	public class ACD extends ArrayCycleDetection {
+		public static void main(String[] args) {
+	        int[] nums = {1, 3, 0, 4, 2};
+	        System.out.println("Array has cycle? " + hasCycle(nums)); // true
+	    }
+	}
+	
+	public class RLLI extends ReverseLinkedListIterative {
+		public static void main(String[] args) {
+	        Node head = new Node(1);
+	        head.setNext(new Node(2));
+	        head.getNext().setNext(new Node(3));
+	        head.getNext().getNext().setNext(new Node(4));
+
+	        System.out.print("Original: ");
+	        PrintList.printList(head);
+
+	        Node reversed = reverseList(head);
+
+	        System.out.print("Reversed: ");
+	        PrintList.printList(reversed);
+	    }
+	}
+	
+	public class RLLR extends ReverseLinkedListRecursive {
+		public static void main(String[] args) {
+	        Node head = new Node(10);
+	        head.setNext(new Node(20));
+	        head.getNext().setNext(new Node(30));
+
+	        System.out.print("Original: ");
+	        PrintList.printList(head);
+
+	        Node reversed = reverseList(head);
+
+	        System.out.print("Reversed: ");
+	        PrintList.printList(reversed);
+	    }
+	}
+	
+	public class RBT extends ReverseBetween {
+		public static void main(String[] args) {
+	        Node head = new Node(1);
+	        head.setNext(new Node(2));
+	        head.getNext().setNext(new Node(3));
+	        head.getNext().getNext().setNext(new Node(4));
+	        head.getNext().getNext().getNext().setNext(new Node(5));
+
+	        System.out.print("Original: ");
+	        PrintList.printList(head);
+
+	        Node result = reverseBetween(head, 2, 4);
+
+	        System.out.print("Reversed [2,4]: ");
+	        PrintList.printList(result);
+	    }
+	}
+	
+	public class RKG extends ReverseKGroup {
+		public static void main(String[] args) {
+	        Node head = new Node(1);
+	        head.setNext(new Node(2));
+	        head.getNext().setNext(new Node(3));
+	        head.getNext().getNext().setNext(new Node(4));
+	        head.getNext().getNext().getNext().setNext(new Node(5));
+
+	        System.out.print("Original: ");
+	        PrintList.printList(head);
+
+	        Node result = reverseKGroup(head, 3);
+
+	        System.out.print("Reversed in k=3: ");
+	        PrintList.printList(result);
+	    }
+	}
+	
+	public class MSL extends MergeSortedLists {
+		public static void main(String[] args) {
+	        Node a = new Node(1);
+	        a.setNext(new Node(3));
+	        a.getNext().setNext(new Node(5));
+
+	        Node b = new Node(2);
+	        b.setNext(new Node(4));
+	        b.getNext().setNext(new Node(6));
+
+	        System.out.print("List A: ");
+	        PrintList.printList(a);
+	        System.out.print("List B: ");
+	        PrintList.printList(b);
+
+	        Node merged = merge(a, b);
+	        System.out.print("Merged: ");
+	        PrintList.printList(merged);
+	    }
+	}
+
+	public class SPL extends SplitList {
+		public static void main(String[] args) {
+	        Node head = new Node(10);
+	        head.setNext(new Node(20));
+	        head.getNext().setNext(new Node(30));
+	        head.getNext().getNext().setNext(new Node(40));
+	        head.getNext().getNext().getNext().setNext(new Node(50));
+
+	        System.out.print("Original: ");
+	        PrintList.printList(head);
+
+	        Node[] parts = splitList(head);
+	        System.out.print("First Half: ");
+	        PrintList.printList(parts[0]);
+	        System.out.print("Second Half: ");
+	        PrintList.printList(parts[1]);
+	    }
+	}
+	
+	public class MKSL extends MergeKSortedLists {
+		public static void main(String[] args) {
+	        Node[] lists = new Node[3];
+
+	        lists[0] = new Node(1);
+	        lists[0].setNext(new Node(4));
+	        lists[0].getNext().setNext(new Node(7));
+
+	        lists[1] = new Node(2);
+	        lists[1].setNext(new Node(5));
+	        lists[1].getNext().setNext(new Node(8));
+
+	        lists[2] = new Node(3);
+	        lists[2].setNext(new Node(6));
+	        lists[2].getNext().setNext(new Node(9));
+
+	        Node merged = mergeKLists(lists);
+	        System.out.print("Merged k Lists: ");
+	        PrintList.printList(merged);
+	    }
+	}
+	
+	public class SBV extends SplitByValue {
+		public static void main(String[] args) {
+	        Node head = new Node(5);
+	        head.setNext(new Node(1));
+	        head.getNext().setNext(new Node(8));
+	        head.getNext().getNext().setNext(new Node(0));
+	        head.getNext().getNext().getNext().setNext(new Node(6));
+
+	        Node[] split = splitByValue(head, 5);
+
+	        System.out.print("Less than 5: ");
+	        PrintList.printList(split[0]);
+
+	        System.out.print("Greater or equal to 5: ");
+	        PrintList.printList(split[1]);
+	    }
+	}
+	
 	public static void main(String[] args) {
 		
 		System.out.println("Choose from the below options of LinkedList: \n 1. SinglyLinkedList 2. DoublyLinkedList 3. CircularPlaylist #MusicPlaylist \n 4. BrowserHistory 5. CircularQueue 6. RoundRobinScheduler \n"
-				+ " 7. CycleDetection \n");
+				+ " 7. CycleDetection 8. MiddleOfList 9. StartOfCycle\n"
+				+ " 10. PalindromeLinkedList 11. ArrayCycleDetection 12. ReverseLinkedListIterative \n"
+				+ " 13. ReverseLinkedListRecursive 14. ReverseBetween 15. ReverseKGroup \n"
+				+ " 16. MergeSortedLists 17. SplitList 18. MergeKSortedLists \n"
+				+ " 19. SplitByValue");
 		int a = S1.nextInt();
 		while (a!=-1) {
 		if (a==1) {SLL.main(args); a=0;}
@@ -119,6 +335,18 @@ public class LinkedListMain {
 		else if (a==5) {CQ.main(args);a=0;}
 		else if (a==6) {RRS.main(args);a=0;}
 		else if (a==7) {CD.main(args);a=0;}
+		else if (a==8) {MOL.main(args);a=0;}
+		else if (a==9) {SOC.main(args);a=0;}
+		else if (a==10) {PLL.main(args);a=0;}
+		else if (a==11) {ACD.main(args);a=0;}
+		else if (a==12) {RLLI.main(args);a=0;}
+		else if (a==13) {RLLR.main(args);a=0;}
+		else if (a==14) {RBT.main(args);a=0;}
+		else if (a==15) {RKG.main(args);a=0;}
+		else if (a==16) {MSL.main(args);a=0;}
+		else if (a==17) {SPL.main(args);a=0;}
+		else if (a==18) {MKSL.main(args);a=0;}
+		else if (a==19) {SBV.main(args);a=0;}
 		else {break;}
 	}	
 }
