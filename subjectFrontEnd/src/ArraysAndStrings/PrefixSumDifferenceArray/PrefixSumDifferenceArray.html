@@ -66,9 +66,35 @@
     window.location.href = "anotherpage.html"; // or wherever you want
   }
 
-  async function fetchData() {
+  async function prefixSumExample() {
     try {
-      const response = await fetch('http://localhost:8080/data'); // Java backend API URL
+      const response = await fetch('http://localhost:8081/PrefixSumDifferenceArrays/PrefixSumExample'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function differenceArrayExample() {
+    try {
+      const response = await fetch('http://localhost:8081/PrefixSumDifferenceArrays/DifferenceArrayExample'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function rangeSumQuery() {
+    try {
+      const response = await fetch('http://localhost:8081/PrefixSumDifferenceArrays/RangeSumQuery'); // Java backend API URL
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

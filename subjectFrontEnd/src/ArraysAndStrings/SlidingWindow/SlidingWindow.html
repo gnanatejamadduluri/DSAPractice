@@ -62,13 +62,39 @@
 </div>
 
 <script>
-  function goToAnotherPage() {
+  function bruteForceMaxSum() {
     window.location.href = "anotherpage.html"; // or wherever you want
   }
 
-  async function fetchData() {
+  async function bruteForceMaxSum() {
     try {
-      const response = await fetch('http://localhost:8080/data'); // Java backend API URL
+      const response = await fetch('http://localhost:8081/SlidingWindow/BruteForceMaxSum'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function slidingWindowMaxSum() {
+    try {
+      const response = await fetch('http://localhost:8081/SlidingWindow/SlidingWindowMaxSum'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function slidingWindowMinSubArray() {
+    try {
+      const response = await fetch('http://localhost:8081/SlidingWindow/SlidingWindowMinSubarray'); // Java backend API URL
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

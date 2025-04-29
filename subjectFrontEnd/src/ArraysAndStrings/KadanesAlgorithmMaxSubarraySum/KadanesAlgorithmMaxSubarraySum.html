@@ -57,7 +57,7 @@
     <button onclick="circularKadanes()">Circular Kadane's</button>
     <button onclick="circularKadanesWithIndices()">Circular Kadane's With Indices</button>
     <button onclick="circularKadanesWithSubArray()">Circular Kadane's With Sub-Array</button>
-    <button onclick="KadanesWithIndices()">Kadane's With Indices</button>
+    <button onclick="kadanesWithIndices()">Kadane's With Indices</button>
       </div>
 
   <div id="dataDisplay">Data will appear here...</div>
@@ -68,9 +68,61 @@
     window.location.href = "anotherpage.html"; // or wherever you want
   }
 
-  async function fetchData() {
+  async function kadanesAlgorithm() {
     try {
-      const response = await fetch('http://localhost:8080/data'); // Java backend API URL
+      const response = await fetch('http://localhost:8081/KadanesAlgorithmMaxSubarraySum/KadanesAlgorithm'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function circularKadanes() {
+    try {
+      const response = await fetch('http://localhost:8081/KadanesAlgorithmMaxSubarraySum/CircularKadanes'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function circularKadanesWithIndices() {
+    try {
+      const response = await fetch('http://localhost:8081/KadanesAlgorithmMaxSubarraySum/CircularKadaneWithIndices'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function circularKadanesWithSubArray() {
+    try {
+      const response = await fetch('http://localhost:8081/KadanesAlgorithmMaxSubarraySum/CircularKadaneWithSubarray'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function kadanesWithIndices() {
+    try {
+      const response = await fetch('http://localhost:8081/KadanesAlgorithmMaxSubarraySum/KadanesWithIndices'); // Java backend API URL
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

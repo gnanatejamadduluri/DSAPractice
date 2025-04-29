@@ -1,7 +1,11 @@
 package prefixSumDifferenceArrays;
 
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+
 public class DifferenceArrayExample {
-	public static void main(String[] args) {
+	public static LinkedHashMap<String, String> main(String[] args) {
+		LinkedHashMap<String,String> response = new LinkedHashMap<>();
         int[] arr = {2, 4, 6, 8, 10};
         int[] diff = new int[arr.length + 1]; // One extra space to avoid out of bounds
 
@@ -25,6 +29,11 @@ public class DifferenceArrayExample {
         for (int num : updatedArray) {
             System.out.print(num + " ");
         }
+        
+        response.put("Given Array ", Arrays.toString(arr));
+        response.put("Range update from index 1 to 3 ", "by adding 5");
+        response.put("Updated Array", Arrays.toString(updatedArray));
+        return response;
     }
 
     // Function for range update

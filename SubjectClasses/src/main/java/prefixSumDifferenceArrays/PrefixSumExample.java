@@ -1,7 +1,11 @@
 package prefixSumDifferenceArrays;
 
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+
 public class PrefixSumExample {
-	 public static void main(String[] args) {
+	 public static LinkedHashMap<String, String> main(String[] args) {
+		 LinkedHashMap<String,String> response = new LinkedHashMap<>();
 	        int[] arr = {2, 4, 6, 8, 10};
 	        int[] prefixSum = new int[arr.length];
 
@@ -17,5 +21,8 @@ public class PrefixSumExample {
 	        for (int sum : prefixSum) {
 	            System.out.print(sum + " ");
 	        }
+	        response.put("Given Array ", Arrays.toString(arr));
+	        response.put("PreixSum-Array ", Arrays.toString(prefixSum));
+	        return response;
 	    }
 }
