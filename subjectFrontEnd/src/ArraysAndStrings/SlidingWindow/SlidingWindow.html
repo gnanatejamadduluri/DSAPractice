@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sliding Window</title>
+  <style>
+    body {
+      background-image: url('https://plus.unsplash.com/premium_photo-1673688152102-b24caa6e8725?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Computer Science background */
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .nature-image {
+      width: 300px;
+      height: auto;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #dataDisplay {
+      margin-top: 20px;
+      font-size: 18px;
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Sliding Window </h1>
+
+  <div>
+    <button onclick="bruteForceMaxSum()">BruteForce Max-Sum</button>
+    <button onclick="slidingWindowMaxSum()">Sliding Window Max-Sum</button>
+    <button onclick="slidingWindowMinSubArray()">Sliding Window Min-SubArray</button>
+      </div>
+
+  <div id="dataDisplay">Data will appear here...</div>
+</div>
+
+<script>
+  function goToAnotherPage() {
+    window.location.href = "anotherpage.html"; // or wherever you want
+  }
+
+  async function fetchData() {
+    try {
+      const response = await fetch('http://localhost:8080/data'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+</script>
+
+</body>
+</html>

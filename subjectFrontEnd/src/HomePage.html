@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DSA</title>
+  <style>
+    body {
+      background-image: url('https://plus.unsplash.com/premium_photo-1673688152102-b24caa6e8725?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Computer Science background */
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .nature-image {
+      width: 300px;
+      height: auto;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #dataDisplay {
+      margin-top: 20px;
+      font-size: 18px;
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Welcome to the DSA </h1>
+
+  <div>
+    <button onclick="arraysAndStrings()">Arrays & Strings</button>
+    <button onclick="linkedList()">Linked List</button>
+    <button onclick="stackAndQueue()">Stack & Queue</button>
+    <button onclick="hashingAndHashTables()">Hashing & Hash Tables</button>
+    <button onclick="trees()">Trees</button>
+    <button onclick="graphs()">Graphs</button>
+    <button onclick="triesAndSuffixStructures()">Tries & Suffix Structures</button>
+    <button onclick="sortingAlgorithms()">Sorting Algorithms</button>
+    <button onclick="recursionAndBacktracking()">Recursion & Backtracking</button>
+    <button onclick="dynamicProgramming()">Dynamic Programming (DP)</button>
+    <button onclick="divideAndConquer()">Divide and Conquer</button>
+    <button onclick="bitManipulation()">Bit Manipulation</button>
+    <button onclick="numberTheory()">Number Theory</button>
+    <button onclick="stringAlgorithms()">String Algorithms</button>
+    <button onclick="fetchData()">Get Data from Backend</button>
+  </div>
+
+  <div id="dataDisplay">Data will appear here...</div>
+</div>
+
+<script>
+  function arraysAndStrings() {
+    window.location.href = "ArraysAndStrings/ArraysAndStrings.html"; // or wherever you want
+  }
+  function linkedList() {
+    window.location.href = "LinkedList/LinkedList.html"; // or wherever you want
+  }
+  function stackAndQueue() {
+    window.location.href = "StackAndQueue/StackAndQueue.html"; // or wherever you want
+  }
+
+  function fetchData() {
+    fetch("http://localhost:8081/api/message")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("dataDisplay").textContent = data;
+      })
+      .catch(error => {
+        console.error("Error fetching message:", error);
+        document.getElementById("dataDisplay").textContent = "Error loading data.";
+      });
+    }
+</script>
+
+</body>
+</html>

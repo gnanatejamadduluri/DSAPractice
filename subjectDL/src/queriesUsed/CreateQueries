@@ -1,0 +1,9 @@
+CREATE TABLE javaprac.Login_details (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    email_id VARCHAR(100),
+    password_ varchar(100),
+    wrong_password_count INT
+);
+-- 27th April 2025 -GTM
