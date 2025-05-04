@@ -82,9 +82,243 @@
     window.location.href = "ArraysAndStrings/ArraysAndStrings.html"; // or wherever you want
   }
 
+  async function singlyLinkedList() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists/SinglyLinkedList'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function doublyLinkedList() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists/DoublyLinkedList'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function circularPlaylist() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists/CircularPlaylist'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function browserHistory() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists/BrowserHistory'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function circularQueue() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists/CircularQueue'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function roundRobinScheduler() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists/RoundRobinScheduler'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function cycleDetection() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists/CycleDetection'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
   async function dubdata() {
     try {
-      const response = await fetch('http://localhost:8080/data'); // Java backend API URL
+      const response = await fetch('http://localhost:8081/LinkedLists'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function dubdata() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function dubdata() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function dubdata() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function dubdata() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function dubdata() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function dubdata() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function dubdata() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function dubdata() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function dubdata() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function dubdata() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function dubdata() {
+    try {
+      const response = await fetch('http://localhost:8081/LinkedLists'); // Java backend API URL
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
