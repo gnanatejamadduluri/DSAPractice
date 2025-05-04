@@ -1,9 +1,11 @@
 package linkedList;
 
+import java.util.LinkedHashMap;
+
 import linkedListNeeds.Task;
 
 public class RoundRobinScheduler {
-
+LinkedHashMap<String,String> response = new LinkedHashMap<>();
 	Task tail = null;
 
     public void addTask(String name, int burstTime) {
@@ -18,24 +20,27 @@ public class RoundRobinScheduler {
         }
     }
 
-    public void runScheduler(int timeQuantum) {
+    public LinkedHashMap<String, String> runScheduler(int timeQuantum) {
         if (tail == null) {
             System.out.println("No tasks to run.");
-            return;
+            response.put("Exit-", " No tasks to run.");
+            return response;
         }
-
-        System.out.println("Starting Round-Robin Scheduling:");
+        response.put("Output-","Starting Round-Robin Scheduling");
+        System.out.println("Starting Round-Robin Scheduling");
         Task current = tail.getNext();
-
+        int i=1;
         while (true) {
             if (current.getBurstTime() > 0) {
                 int timeUsed = Math.min(timeQuantum, current.getBurstTime());
                 current.setBurstTime(current.getBurstTime() - timeUsed);
-                System.out.println("🔧 Running " + current.getName() + " for " + timeUsed + " units");
-
+                System.out.println(i+" 🔧 Running " + current.getName() + " for " + timeUsed + " units");
+                response.put(i+". Running!! " + current.getName() + " for " + timeUsed + " units ", "");
                 if (current.getBurstTime() == 0) {
                     System.out.println("✅ " + current.getName() + " completed!");
+                    response.put("✅ " + current.getName() + " completed!", "");
                 }
+                i++;
             }
 
             // Check if all are done
@@ -55,5 +60,7 @@ public class RoundRobinScheduler {
         }
 
         System.out.println("🎉 All tasks completed.");
+        response.put(" All tasks completed.", "");
+        return response;
     }
 }

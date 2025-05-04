@@ -19,12 +19,15 @@ public class SinglyLinkedList {
         current.setNext(newNode);
     }
  // Print all nodes
-    public void printList() {
+    public String printList() {
         Node current = head;
+        String s= "";
         while (current != null) {
             System.out.print(current.getData() + " → ");
+            s= s+" "+current.getData()+" → ";
             current = current.getNext();
         }
-        System.out.println("null");
+        System.out.println("null");s=s+null;
+        return s;
     }
 }

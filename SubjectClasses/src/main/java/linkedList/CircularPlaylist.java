@@ -7,7 +7,7 @@ public class CircularPlaylist {
     Song tail = null;
 
     // Add song to playlist
-    public void addSong(String name) {
+    public String addSong(String name) {
         Song newSong = new Song(name);
         if (head == null) {
             head = newSong;
@@ -18,20 +18,23 @@ public class CircularPlaylist {
             tail = newSong;
             tail.setNext(head);
         }
+        return name;
     }
 
     // Play songs in loop n times
-    public void play(int loops) {
-        if (head == null) return;
-
+    public String play(int loops) {
+        if (head == null) return null;
+        String s= loops+" Loops = ";
         Song current = head;
         int count = 0;
 
         System.out.println("Now Playing:");
         while (count < loops) {
             System.out.println("♪ " + current.getName());
+            s = s + " ♪ " + current.getName();
             current = current.getNext();
             if (current == head) count++;
         }
+        return s;
     }
 }

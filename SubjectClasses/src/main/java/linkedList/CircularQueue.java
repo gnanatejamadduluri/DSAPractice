@@ -13,10 +13,10 @@ public class CircularQueue {
     }
 
     // Enqueue
-    public void enqueue(int value) {
+    public String enqueue(int value) {
         if (size == capacity) {
             System.out.println("Queue is full!");
-            return;
+            return "Queue is empty!";
         }
 
         Node newNode = new Node(value);
@@ -30,13 +30,14 @@ public class CircularQueue {
         }
         size++;
         System.out.println("Enqueued: " + value);
+        return Integer.toString(value);
     }
 
     // Dequeue
-    public void dequeue() {
+    public String dequeue() {
         if (size == 0) {
             System.out.println("Queue is empty!");
-            return;
+            return "Queue is empty!";
         }
 
         int value = tail.getNext().getData();
@@ -47,29 +48,36 @@ public class CircularQueue {
         }
         size--;
         System.out.println("Dequeued: " + value);
+        return Integer.toString(value);
     }
 
     // Peek front
-    public void peek() {
+    public String peek() {
         if (tail == null) {
             System.out.println("Queue is empty!");
+            return "Queue is empty!";
         } else {
             System.out.println("Front: " + tail.getNext().getData());
         }
+        return Integer.toString(tail.getNext().getData());
     }
 
-    public void display() {
+    public String display() {
         if (tail == null) {
             System.out.println("Queue is empty!");
-            return;
+            return "Queue is empty!";
         }
-
+        String s = ""; 
         Node current = tail.getNext();
         System.out.print("Queue: ");
         do {
+        	s = s + current.getData() + " → ";
             System.out.print(current.getData() + " → ");
             current = current.getNext();
         } while (current != tail.getNext());
-        System.out.println("(back to front)");
+        System.out.println("(back to front)"); 
+        s = s+" (back to front)";
+        return s;
     }
+   
 }

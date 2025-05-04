@@ -1,5 +1,7 @@
 package mains;
 import linkedListNeeds.PrintList;
+
+import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 import linkedList.ArrayCycleDetection;
@@ -28,49 +30,62 @@ public class LinkedListMain {
 	static Scanner S1 = new Scanner(System.in);
 
 	public class SLL extends SinglyLinkedList {
-		public static void main(String[] args) {
+		public static LinkedHashMap<String, String> main(String[] args) {
+			LinkedHashMap<String,String> response = new LinkedHashMap<>();
 	        SinglyLinkedList list = new SinglyLinkedList();
 	        list.append(10);
 	        list.append(20);
 	        list.append(30);
-	        list.printList(); // 10 → 20 → 30 → null
+	        response.put("Appending1 ", "10");
+	        response.put("Appending2 ", "20");
+	        response.put("Appending3 ", "30");
+	        response.put("Singly Linked List ", list.printList()); // 10 → 20 → 30 → null
+	        return response;
 	    }
 	}
 	
 	public class DLL extends DoublyLinkedList {
-		public static void main(String[] args) {
-	        DoublyLinkedList list = new DoublyLinkedList();
+		public static LinkedHashMap<String, String> main(String[] args) {
+	        LinkedHashMap<String,String> response = new LinkedHashMap<>();
+			DoublyLinkedList list = new DoublyLinkedList();
 	        list.append(100);
 	        list.append(200);
 	        list.append(300);
-	        list.printForward();  // 100 ⇄ 200 ⇄ 300 ⇄ null
-	        list.printBackward(); // 300 ⇄ 200 ⇄ 100 ⇄ null
+	        response.put("Appending1 ", "100");
+	        response.put("Appending2 ", "200");
+	        response.put("Appending3 ", "300");
+	        response.put("Printing the list ", list.printForward()); // 100 ⇄ 200 ⇄ 300 ⇄ null
+	        response.put("Reversed list ", list.printBackward()); // 300 ⇄ 200 ⇄ 100 ⇄ null
+	        return response;
 	    }
 	}
 	
 	public class CPL extends CircularPlaylist {
-		public static void main(String[] args) {
+		public static LinkedHashMap<String,String> main(String[] args) {
+			LinkedHashMap<String,String> response = new LinkedHashMap<>();
 	        CircularPlaylist playlist = new CircularPlaylist();
-	        playlist.addSong("Blinding Lights");
-	        playlist.addSong("Levitating");
-	        playlist.addSong("As It Was");
+	        response.put(playlist.addSong("Levitating")," Got Added");
+	        response.put(playlist.addSong("As It Was"), " Got Added");
 
-	        playlist.play(2); // Plays 2 full loops
-	    }
+	        response.put("Now Playing ",playlist.play(2)); // Plays 2 full loops
+	    return response;
+		}
 	}
 	
 	public class BH extends BrowserHistory {
-		public static void main(String[] args) {
+		public static LinkedHashMap<String, String> main(String[] args) {
+			LinkedHashMap<String,String> response = new LinkedHashMap<>();
 	        BrowserHistory browser = new BrowserHistory();
-	        browser.visit("google.com");
-	        browser.visit("wikipedia.org");
-	        browser.visit("openai.com");
+	        response.putAll(browser.visit("google.com"));
+	        response.putAll(browser.visit("wikipedia.org"));
+	        response.putAll(browser.visit("openai.com"));
 
-	        browser.show();    // openai.com
-	        browser.back();    // wikipedia.org
-	        browser.back();    // google.com
-	        browser.forward(); // wikipedia.org
-	        browser.forward(); // openai.com
+	        response.put("1",browser.show());    // openai.com
+	        response.put("2",browser.back());    // wikipedia.org
+	        response.put("3",browser.back());    // google.com
+	        response.put("4",browser.forward()); // wikipedia.org
+	        response.put("5",browser.forward()); // openai.com
+	        return response;
 	    }
 	}
 	
@@ -80,32 +95,46 @@ public class LinkedListMain {
 			// TODO Auto-generated constructor stub
 		}
 
-		public static void main(String[] args) {
+		public static LinkedHashMap<String, String> main(String[] args) {
 	        CircularQueue queue = new CircularQueue(5);
+	        LinkedHashMap<String,String> response = new LinkedHashMap<>();
 	        queue.enqueue(10);
 	        queue.enqueue(20);
 	        queue.enqueue(30);
 	        queue.display();
-
 	        queue.dequeue();
 	        queue.peek();
 	        queue.display();
+	        response.put(" Enqueued-1 ",queue.enqueue(10));
+	        response.put(" Enqueued-2 ",queue.enqueue(20));
+	        response.put(" Enqueued-3 ",queue.enqueue(30));
+	        response.put(" Queue Display-1 ",queue.display());
+	        response.put(queue.dequeue(), " Dequeued!");
+	        response.put(queue.peek(), " Peek!");
+	        response.put(" Queue Display-2 ",queue.display());
+	        return response;
 	    }
 	}
 	
 	public class RRS extends RoundRobinScheduler {
-		public static void main(String[] args) {
-	        RoundRobinScheduler scheduler = new RoundRobinScheduler();
+		public static LinkedHashMap<String, String> main(String[] args) {
+	        LinkedHashMap<String,String> response = new LinkedHashMap<>();
+			RoundRobinScheduler scheduler = new RoundRobinScheduler();
 	        scheduler.addTask("Task-A", 4);
 	        scheduler.addTask("Task-B", 6);
 	        scheduler.addTask("Task-C", 3);
-
-	        scheduler.runScheduler(2); // Each gets 2 units per round
+	        response.put("Task-A ", "Burst Time=4");
+	        response.put("Task-B ", "Burst Time=6");
+	        response.put("Task-C ", "Burst Time=3");
+	        response.put("Each gets 2 Units per round", "");
+	       response.putAll(scheduler.runScheduler(2)); // Each gets 2 units per round
+	       return response;
 	    }
 	}
 	
 	public class CD extends CycleDetection {
-		public static void main(String[] args) {
+		public static LinkedHashMap<String, String> main(String[] args) {
+			LinkedHashMap<String,String> response = new LinkedHashMap<>();
 	        Node head = new Node(1);
 	        head.setNext(new Node(2));
 	        head.getNext().setNext(new Node(3));
@@ -115,6 +144,8 @@ public class LinkedListMain {
 	        head.getNext().getNext().getNext().setNext(head.getNext());
 
 	        System.out.println("Has cycle: " + hasCycle(head)); // true
+	        response.put(" Has cycle??? ", Boolean.toString(hasCycle(head)));
+	        return response;
 	    }
 	}
 	

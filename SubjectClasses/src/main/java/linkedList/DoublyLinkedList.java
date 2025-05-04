@@ -16,25 +16,30 @@ public class DoublyLinkedList {
         newNode.setPrev(tail);
         tail = newNode;
     }
-
+    String s= "";
     // Print forward
-    public void printForward() {
-        Node current = head;
+    public String printForward() {
+    	s="";
+    	Node current = head;
         while (current != null) {
             System.out.print(current.getData() + " ⇄ ");
+            s= s+" "+current.getData()+" → ";
             current = current.getNext();
         }
-        System.out.println("null");
+        System.out.println("null");s=s+null;
+        return s;
     }
-
     // Print backward
-    public void printBackward() {
+    public String printBackward() {
+    	s="";
         Node current = tail;
         while (current != null) {
             System.out.print(current.getData() + " ⇄ ");
+            s= s+" "+current.getData()+" ⇄ ";
             current = current.getPrev();
         }
-        System.out.println("null");
+        System.out.println("null"); s=s+null;
+        return s;
     }
 
 }
