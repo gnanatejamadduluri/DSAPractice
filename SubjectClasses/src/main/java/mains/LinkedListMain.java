@@ -133,8 +133,7 @@ public class LinkedListMain {
 	}
 	
 	public class CD extends CycleDetection {
-		public static LinkedHashMap<String, String> main(String[] args) {
-			LinkedHashMap<String,String> response = new LinkedHashMap<>();
+		public static String main(String[] args) {
 	        Node head = new Node(1);
 	        head.setNext(new Node(2));
 	        head.getNext().setNext(new Node(3));
@@ -143,14 +142,13 @@ public class LinkedListMain {
 	        // Create cycle: 4 → 2
 	        head.getNext().getNext().getNext().setNext(head.getNext());
 
-	        System.out.println("Has cycle: " + hasCycle(head)); // true
-	        response.put(" Has cycle??? ", Boolean.toString(hasCycle(head)));
-	        return response;
+	        System.out.println(" Has cycle?? " + hasCycle(head)); // true
+	        return " Has cycle?? " + hasCycle(head);
 	    }
 	}
 	
 	public class MOL extends MiddleOfList {
-		public static void main(String[] args) {
+		public static String main(String[] args) {
 	        Node head = new Node(10);
 	        head.setNext(new Node(20));
 	        head.getNext().setNext(new Node(30));
@@ -158,11 +156,12 @@ public class LinkedListMain {
 	        head.getNext().getNext().getNext().setNext(new Node(50));
 
 	        System.out.println("Middle: " + findMiddle(head)); // 30
-	    }
+	        return "Middle: " + Integer.toString(findMiddle(head));
+		}
 	}
 	
 	public class SOC extends StartOfCycle {
-		public static void main(String[] args) {
+		public static String main(String[] args) {
 	        Node head = new Node(1);
 	        head.setNext(new Node(2));
 	        head.getNext().setNext(new Node(3));
@@ -176,101 +175,81 @@ public class LinkedListMain {
 
 	        if (start != null) {
 	            System.out.println("Cycle starts at node: " + start.getData());
+	            return "Cycle starts at node: " + Integer.toString(start.getData());
 	        } else {
 	            System.out.println("No cycle detected.");
+	            return "No cycle detected.";
 	        }
 	    }
 	}
 	
 	public class PLL extends PalindromeLinkedList {
-		public static void main(String[] args) {
+		public static String main(String[] args) {
 	        Node head = new Node(1);
 	        head.setNext(new Node(2));
 	        head.getNext().setNext(new Node(2));
 	        head.getNext().getNext().setNext(new Node(1));
 
 	        System.out.println("Is palindrome? " + isPalindrome(head)); // true
+	        return "Is palindrome??: " + isPalindrome(head);
 	    }
 	}
 	
 	public class ACD extends ArrayCycleDetection {
-		public static void main(String[] args) {
+		public static String main(String[] args) {
 	        int[] nums = {1, 3, 0, 4, 2};
 	        System.out.println("Array has cycle? " + hasCycle(nums)); // true
+	        return "Array has cycle??: " + hasCycle(nums);
 	    }
 	}
 	
 	public class RLLI extends ReverseLinkedListIterative {
-		public static void main(String[] args) {
+		public static String main(String[] args) {
 	        Node head = new Node(1);
 	        head.setNext(new Node(2));
 	        head.getNext().setNext(new Node(3));
 	        head.getNext().getNext().setNext(new Node(4));
-
-	        System.out.print("Original: ");
-	        PrintList.printList(head);
-
-	        Node reversed = reverseList(head);
-
-	        System.out.print("Reversed: ");
-	        PrintList.printList(reversed);
+	        return "Original: " + PrintList.printList(head) + 
+	        		"  Reversed: " + PrintList.printList(reverseList(head));
 	    }
 	}
 	
 	public class RLLR extends ReverseLinkedListRecursive {
-		public static void main(String[] args) {
+		public static String main(String[] args) {
 	        Node head = new Node(10);
 	        head.setNext(new Node(20));
 	        head.getNext().setNext(new Node(30));
-
-	        System.out.print("Original: ");
-	        PrintList.printList(head);
-
-	        Node reversed = reverseList(head);
-
-	        System.out.print("Reversed: ");
-	        PrintList.printList(reversed);
+	        return "Original: " + PrintList.printList(head) + 
+	        		"  Reversed: " + PrintList.printList(reverseList(head));
 	    }
 	}
 	
 	public class RBT extends ReverseBetween {
-		public static void main(String[] args) {
+		public static String main(String[] args) {
 	        Node head = new Node(1);
 	        head.setNext(new Node(2));
 	        head.getNext().setNext(new Node(3));
 	        head.getNext().getNext().setNext(new Node(4));
 	        head.getNext().getNext().getNext().setNext(new Node(5));
-
-	        System.out.print("Original: ");
-	        PrintList.printList(head);
-
-	        Node result = reverseBetween(head, 2, 4);
-
-	        System.out.print("Reversed [2,4]: ");
-	        PrintList.printList(result);
+	        return "Original: " + PrintList.printList(head) + 
+	        		"  Reversed [2,4]: " + PrintList.printList(reverseBetween(head, 2, 4));
 	    }
 	}
 	
 	public class RKG extends ReverseKGroup {
-		public static void main(String[] args) {
+		public static String main(String[] args) {
 	        Node head = new Node(1);
 	        head.setNext(new Node(2));
 	        head.getNext().setNext(new Node(3));
 	        head.getNext().getNext().setNext(new Node(4));
 	        head.getNext().getNext().getNext().setNext(new Node(5));
-
-	        System.out.print("Original: ");
-	        PrintList.printList(head);
-
-	        Node result = reverseKGroup(head, 3);
-
-	        System.out.print("Reversed in k=3: ");
-	        PrintList.printList(result);
+	        return "Original: " + PrintList.printList(head) + 
+	        		"  Reversed in k=3: " + PrintList.printList(reverseKGroup(head, 3));
 	    }
 	}
 	
 	public class MSL extends MergeSortedLists {
-		public static void main(String[] args) {
+		public static String main(String[] args) {
 	        Node a = new Node(1);
 	        a.setNext(new Node(3));
 	        a.getNext().setNext(new Node(5));
@@ -278,74 +257,67 @@ public class LinkedListMain {
 	        Node b = new Node(2);
 	        b.setNext(new Node(4));
 	        b.getNext().setNext(new Node(6));
-
-	        System.out.print("List A: ");
-	        PrintList.printList(a);
-	        System.out.print("List B: ");
-	        PrintList.printList(b);
-
-	        Node merged = merge(a, b);
-	        System.out.print("Merged: ");
-	        PrintList.printList(merged);
+	        return  "List A: " + PrintList.printList(a) + 
+	        		"  List B: " + PrintList.printList(b) +
+	        		"  Merged: " + PrintList.printList(merge(a, b));
 	    }
 	}
 
 	public class SPL extends SplitList {
-		public static void main(String[] args) {
+		public static String main(String[] args) {
 	        Node head = new Node(10);
 	        head.setNext(new Node(20));
 	        head.getNext().setNext(new Node(30));
 	        head.getNext().getNext().setNext(new Node(40));
 	        head.getNext().getNext().getNext().setNext(new Node(50));
-
-	        System.out.print("Original: ");
-	        PrintList.printList(head);
-
+	        String s= "Original: " + PrintList.printList(head);
 	        Node[] parts = splitList(head);
-	        System.out.print("First Half: ");
-	        PrintList.printList(parts[0]);
-	        System.out.print("Second Half: ");
-	        PrintList.printList(parts[1]);
+	        s= s+ "  First Half: " + PrintList.printList(parts[0]) +
+	        		"  Second Half: " + PrintList.printList(parts[1]);
+	        return s;
 	    }
 	}
 	
 	public class MKSL extends MergeKSortedLists {
-		public static void main(String[] args) {
+		public static String main(String[] args) {
 	        Node[] lists = new Node[3];
 
 	        lists[0] = new Node(1);
 	        lists[0].setNext(new Node(4));
 	        lists[0].getNext().setNext(new Node(7));
 
+	        String s = "List-1: " + PrintList.printList(lists[0]);
+	        
 	        lists[1] = new Node(2);
 	        lists[1].setNext(new Node(5));
 	        lists[1].getNext().setNext(new Node(8));
+	        
+	        s = s + "  List-2: " + PrintList.printList(lists[1]);
 
 	        lists[2] = new Node(3);
 	        lists[2].setNext(new Node(6));
 	        lists[2].getNext().setNext(new Node(9));
 
+	        s = s + "  List-3: " + PrintList.printList(lists[2]);
 	        Node merged = mergeKLists(lists);
-	        System.out.print("Merged k Lists: ");
-	        PrintList.printList(merged);
+	        s= s + "  Merged 3 Lists: " + PrintList.printList(merged);
+	        return s;
 	    }
 	}
 	
 	public class SBV extends SplitByValue {
-		public static void main(String[] args) {
+		public static String main(String[] args) {
 	        Node head = new Node(5);
 	        head.setNext(new Node(1));
 	        head.getNext().setNext(new Node(8));
 	        head.getNext().getNext().setNext(new Node(0));
 	        head.getNext().getNext().getNext().setNext(new Node(6));
-
+	        String s = "Original: "+ PrintList.printList(head);
+	        
 	        Node[] split = splitByValue(head, 5);
-
-	        System.out.print("Less than 5: ");
-	        PrintList.printList(split[0]);
-
-	        System.out.print("Greater or equal to 5: ");
-	        PrintList.printList(split[1]);
+	        s = s + "  Less than 5: " + PrintList.printList(split[0]);
+	        s = s + "  Greater or equal to 5: " + PrintList.printList(split[1]);
+	        return s;
 	    }
 	}
 	

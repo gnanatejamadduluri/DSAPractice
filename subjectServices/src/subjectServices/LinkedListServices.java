@@ -52,8 +52,80 @@ public class LinkedListServices {
 	 	}
 	 
 	 @GetMapping("/CycleDetection")
-	 public Map<String, String> getCycleDetection() {
-		 Map<String, String> response = LinkedListMain.CD.main(null);
+	 public String getCycleDetection() {
+		 String response = LinkedListMain.CD.main(null);
+		 return response;
+	 	}
+	 
+	 @GetMapping("/MiddleOfList")
+	 public String getMiddleOfList() {
+		 String response = LinkedListMain.MOL.main(null);
+		 return response;
+	 	}
+	 
+	 @GetMapping("/StartOfCycle")
+	 public String getStartOfCycle() {
+		 String response = LinkedListMain.SOC.main(null);
+		 return response;
+	 	}
+	 
+	 @GetMapping("/PalindromeLinkedList")
+	 public String getPalindromeLinkedList() {
+		 String response = LinkedListMain.PLL.main(null);
+		 return response;
+	 	}
+	 
+	 @GetMapping("/ArrayCycleDetection")
+	 public String getArrayCycleDetection() {
+		 String response = LinkedListMain.ACD.main(null);
+		 return response;
+	 	}
+	 
+	 @GetMapping("/ReverseLinkedListIterative")
+	 public String getReverseLinkedListIterative() {
+		 String response = LinkedListMain.RLLI.main(null);
+		 return response;
+	 	}
+	 
+	 @GetMapping("/ReverseLinkedListRecursive")
+	 public String getReverseLinkedListRecursive() {
+		 String response = LinkedListMain.RLLR.main(null);
+		 return response;
+	 	}
+	 
+	 @GetMapping("/ReverseBetween")
+	 public String getReverseBetween() {
+		 String response = LinkedListMain.RBT.main(null);
+		 return response;
+	 	}
+	 
+	 @GetMapping("/ReverseKGroup")
+	 public String getReverseKGroup() {
+		 String response = LinkedListMain.RKG.main(null);
+		 return response;
+	 	}
+	 
+	 @GetMapping("/MergeSortedLists")
+	 public String getMergeSortedLists() {
+		 String response = LinkedListMain.MSL.main(null);
+		 return response;
+	 	}
+	 
+	 @GetMapping("/SplitList")
+	 public String getSplitList() {
+		 String response = LinkedListMain.SPL.main(null);
+		 return response;
+	 	}
+	 
+	 @GetMapping("/MergeKSortedLists")
+	 public String getMergeKSortedLists() {
+		 String response = LinkedListMain.MKSL.main(null);
+		 return response;
+	 	}
+	 
+	 @GetMapping("/SplitByValue")
+	 public String getSplitByValue() {
+		 String response = LinkedListMain.SBV.main(null);
 		 return response;
 	 	}
 
