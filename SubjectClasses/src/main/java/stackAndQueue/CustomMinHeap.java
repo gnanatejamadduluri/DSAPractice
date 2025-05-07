@@ -64,8 +64,9 @@ public class CustomMinHeap {
         heap.set(j, tmp);
     }
 
-    public void print() {
+    public List<Integer> print() {
         System.out.println("Heap: " + heap);
+        return heap;
     }
 
     public boolean isEmpty() {

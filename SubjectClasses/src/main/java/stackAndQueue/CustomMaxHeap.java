@@ -75,8 +75,9 @@ public class CustomMaxHeap {
         heap.set(j, temp);
     }
 
-    public void printHeap() {
+    public ArrayList<Integer> printHeap() {
         System.out.println("Heap: " + heap);
+        return heap;
     }
 
     public boolean isEmpty() {
