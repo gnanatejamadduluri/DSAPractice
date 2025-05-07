@@ -5,7 +5,7 @@
   <title>Stacks And Queues</title>
   <style>
     body {
-      background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80'); /* Computer Science background */
+      background-image: url('https://images.pexels.com/photos/1181332/pexels-photo-1181332.jpeg?auto=compress&cs=tinysrgb&w=600'); /* Computer Science background */
       background-size: cover;
       background-position: center;
       margin: 0;
@@ -30,7 +30,7 @@
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      background-color: #4CAF50;
+      background-color: #2f4730;
       color: white;
       transition: background-color 0.3s;
     }
@@ -69,24 +69,26 @@
     <button onclick="minStack()">Min Stack</button>
     <button onclick="monotonicQueue()">Monotonic Queue</button>
     <button onclick="nextGreaterElement()">Next Greater Element</button>
-    <button onclick="nextSmallerElement()">NextSmallerElement</button>
+    <button onclick="nextSmallerElement()">Next Smaller Element</button>
     <button onclick="slidingWindowMin()">Sliding Window Min</button>
     <button onclick="stackExample()">Stack Example</button>
     <button onclick="topKLargest()">Top K Largest</button>
     <button onclick="validParentheses()">Valid Parentheses</button>
+    <button onclick="homePage()">Back to Home Page</button>
+
   </div>
 
   <div id="dataDisplay">Data will appear here...</div>
 </div>
 
 <script>
-  function arraysAndStrings() {
-    window.location.href = "ArraysAndStrings/ArraysAndStrings.html"; // or wherever you want
+    function homePage() {
+    window.location.href = "file:///C:/Users/HP/git/DSAPractice/subjectFrontEnd/src/HomePage.html"; 
   }
 
-  async function fetchData() {
+  async function basicQueue() {
     try {
-      const response = await fetch('http://localhost:8080/data'); // Java backend API URL
+      const response = await fetch('http://localhost:8081/StackAndQueue/BasicQueue'); // Java backend API URL
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -96,6 +98,267 @@
       document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
     }
   }
+
+  async function circularQueue() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/CircularQueue'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function customMaxHeap() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/CustomMaxHeap'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function customMinHeap() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/CustomMinHeap'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function customPriorityQueue() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/CustomPriorityQueue'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function dequeExample() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/DequeExample'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function histogramArea() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/HistogramArea'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function lruCache() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/LRUCache'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function lruCacheManual() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/LRUCacheManual'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function lruCacheReentrantLock() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/LRUCacheReentrantLock'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function lruCacheThreadSafe() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/LRUCacheThreadSafe'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function maxHeapExample() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/MaxHeapExample'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function minHeapExample() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/MinHeapExample'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function minStack() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/MinStack'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function monotonicQueue() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/MonotonicQueue'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function nextGreaterElement() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/NextGreaterElement'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function nextSmallerElement() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/NextSmallerElement'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function slidingWindowMin() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/SlidingWindowMin'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function stackExample() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/StackExample'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function topKLargest() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/TopKLargest'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
+  async function validParentheses() {
+    try {
+      const response = await fetch('http://localhost:8081/StackAndQueue/ValidParentheses'); // Java backend API URL
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.text(); // or .json() if it's JSON
+      document.getElementById('dataDisplay').innerText = data;
+    } catch (error) {
+      document.getElementById('dataDisplay').innerText = 'Error fetching data: ' + error;
+    }
+  }
+
 </script>
 
 </body>
